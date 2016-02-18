@@ -64,6 +64,16 @@ public class GeneticMain {
         }
     }
 
+    /**
+     * One genetic algorithm iteration. It finished when fitness value is >0.95
+     *
+     * @param selection selection method to use
+     * @param mutation mutation method to use
+     * @param crossover crossover method to use
+     * @param creatures generation that will do everything
+     * @return return next generation.
+     * @throws IOException
+     */
     private static List<ICreature> oneIteration(ISelection selection, IMutation mutation, ICrossover crossover,
                                                 List<ICreature> creatures) throws IOException {
         creatures.parallelStream().forEach(creature -> {
